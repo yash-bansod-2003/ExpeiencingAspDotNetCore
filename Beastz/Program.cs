@@ -49,4 +49,15 @@ app.Run(async context =>
 });
 */
 
+app.Use(async (context, next) =>
+{
+    await context.Response.WriteAsync("<h1>Health check passed</h1>");
+    await next(context);
+});
+
+app.Run(async context =>
+{
+    await context.Response.WriteAsync("<h1>Health check passed second endpoint</h1>");
+});
+
 app.Run();
