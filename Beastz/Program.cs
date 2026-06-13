@@ -109,6 +109,15 @@ app.Map("/status", context =>
     return context.Response.WriteAsync("<h1>Status check passed</h1>");
 });
 
+app.Map("/message/{Name:alpha}", context =>
+{
+    context.Response.StatusCode = 200;
+    context.Response.ContentType = "text/html";
+
+    var Name = context.Request.RouteValues["Name"];
+    return context.Response.WriteAsync("<h1>Message check passed " + Name + "</h1>");
+});
+
 app.MapFallback(context =>
 {
     context.Response.StatusCode = 404;
