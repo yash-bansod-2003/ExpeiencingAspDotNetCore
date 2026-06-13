@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Beastz/Beastz.csproj" />
+  <Project Path="Raptorex/Raptorex.csproj" />
 </Solution>
